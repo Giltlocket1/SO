@@ -1,0 +1,120 @@
+/* ===========================================
+   public/style.css - Estilos PRO (Final con Compactación)
+   =========================================== */
+
+/* 1. Tema Oscuro y Fuente Moderna */
+body {
+    background-color: #1a1a2e; /* Fondo Oscuro Profundo */
+    color: #e4e4e4; /* Texto principal claro */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important; 
+}
+
+.container {
+    max-width: 1200px;
+}
+
+h1, h2, h3, h4, h5, .card-header, .badge, .btn, p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+/* 2. Encabezados y Controles */
+h1 {
+    color: #00bcd4; /* Azul cian moderno */
+    font-weight: 700;
+    text-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+}
+
+.card-header.bg-dark {
+    background-color: #2b2b45 !important; /* Header de control ligeramente más claro */
+    border-bottom: 2px solid #00bcd4;
+}
+
+/* 3. Estilo de las Tarjetas de Tarea (Compactación aplicada aquí) */
+.task-card {
+    min-height: 120px; /* Reducción de altura mínima */
+    background-color: #2b2b45; /* Fondo de la tarjeta */
+    border: 1px solid #4a4a75;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.task-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+.task-card .card-body {
+    padding: 0.5rem 1rem; /* Padding reducido */
+}
+
+.task-card .card-header h6 {
+    font-size: 0.9rem; /* Título más pequeño */
+    margin-right: 1rem;
+}
+
+/* 4. Colores y Estilos de Estado (BADGES) */
+.badge {
+    padding: 0.4em 0.8em;
+    font-size: 0.9em;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+/* Animación de "Corriendo" */
+@keyframes pulse-green {
+    0% { box-shadow: 0 0 0 0 rgba(25, 135, 84, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(25, 135, 84, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(25, 135, 84, 0); }
+}
+
+.bg-running { 
+    background-color: #198754 !important; /* Verde (SUCCESS) */
+    color: white !important;
+    animation: pulse-green 1.5s infinite; /* Aplica la animación */
+}
+
+.bg-waiting { 
+    background-color: #ffc107 !important; /* Amarillo (WARNING) */
+    color: black !important;
+    border: 1px solid #ffc107;
+}
+
+.bg-finished { 
+    /* CLASE AÑADIDA: Para estados Finalizados o Terminados por límite */
+    background-color: #6c757d !important; /* Gris (SECONDARY) */
+    color: #e4e4e4 !important; 
+}
+
+/* 5. Barras de Progreso Mejoradas (Compactación aplicada aquí) */
+.progress {
+    background-color: #4a4a75; 
+    border-radius: 8px;
+    height: 15px !important; /* Altura de la barra reducida */
+    overflow: hidden;
+}
+
+/* El span del progreso ahora se usa para el contador en el encabezado, 
+   pero mantenemos la regla por si se vuelve a usar dentro de la barra */
+.progress-bar span {
+    font-weight: 700;
+    line-height: 15px; /* Ajustado a la nueva altura */
+    font-size: 0.75rem;
+    text-shadow: 1px 1px 2px #000;
+}
+
+/* Estilo para el tamaño de la cola */
+#cola-size {
+    background-color: #f7b731 !important;
+    color: #2b2b45 !important;
+    font-size: 1.5rem !important;
+    min-width: 40px;
+    text-align: center;
+    font-weight: 900;
+}
+
+/* 6. Animación de PULSE (Actividad de Tarea) */
+.pulse-active {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.5); 
+    transform: scale(1.02);
+}
