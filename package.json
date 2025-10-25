@@ -3,7 +3,7 @@
     "http-server": "^14.1.1"
   },
   "scripts": {
-    "dev": "http-server public -c-1"
+    "dev": "http-server docs -c-1"
   },
   "name": "so",
   "version": "1.0.0",
